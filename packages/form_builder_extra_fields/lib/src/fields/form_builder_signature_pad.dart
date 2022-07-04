@@ -140,7 +140,7 @@ class FormBuilderSignaturePadState
       final val = await _getControllerValue();
       didChange(val);
     });
-    SchedulerBinding.instance.addPostFrameCallback((Duration duration) async {
+    SchedulerBinding.instance?.addPostFrameCallback((Duration duration) async {
       // Get initialValue or if points are set, use the  points
       didChange(initialValue ?? await _getControllerValue());
     });

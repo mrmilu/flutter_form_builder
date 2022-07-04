@@ -85,8 +85,6 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderField<T> {
   ///function that returns item from API
   final DropdownSearchOnFind<T>? asyncItems;
 
-  final PopupProps<T> popupProps;
-
   ///custom dropdown clear button icon properties
   final IconButtonProps? clearButtonProps;
 
@@ -129,7 +127,6 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderField<T> {
     this.selectedItems = const [],
     this.shouldRequestFocus = false,
     this.showClearButton = false,
-    this.popupProps = const PopupProps.menu(),
     this.clearButtonProps,
     this.dropdownSearchTextStyle,
     this.dropdownButtonProps,
@@ -159,7 +156,6 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderField<T> {
             return dropdown_search.DropdownSearch<T>(
               // Hack to rebuild when didChange is called
               key: UniqueKey(),
-              asyncItems: asyncItems,
               clearButtonProps: clearButtonProps,
               compareFn: compareFn,
               enabled: state.enabled,
@@ -168,7 +164,6 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderField<T> {
               dropdownSearchDecoration: state.decoration,
               dropdownSearchTextAlign: dropdownSearchTextAlign,
               dropdownSearchTextAlignVertical: dropdownSearchTextAlignVertical,
-              dropdownSearchTextStyle: dropdownSearchTextStyle,
               filterFn: filterFn,
               // isFilteredOnline: isFilteredOnline,
               items: items,
@@ -180,7 +175,6 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderField<T> {
                 }
                 state.didChange(value);
               },
-              popupProps: popupProps,
               selectedItem: state.value,
               showClearButton: showClearButton,
             );

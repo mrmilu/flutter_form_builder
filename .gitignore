@@ -45,3 +45,4 @@ build/
 **/*.env
 
 lcov.info
+**/.fvm/flutter_sdk

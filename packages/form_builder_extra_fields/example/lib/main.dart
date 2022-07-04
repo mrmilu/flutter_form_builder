@@ -57,7 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               children: [
                 FormBuilderSearchableDropdown<String>(
-                  popupProps: const PopupProps.menu(showSearchBox: true),
                   name: 'searchable_dropdown_online',
                   onChanged: _onChanged,
                   asyncItems: (filter) async {
@@ -73,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 FormBuilderSearchableDropdown<String>(
-                  popupProps: const PopupProps.menu(showSearchBox: true),
                   dropdownSearchDecoration: const InputDecoration(
                     hintText: 'Search',
                     labelText: 'Search',
