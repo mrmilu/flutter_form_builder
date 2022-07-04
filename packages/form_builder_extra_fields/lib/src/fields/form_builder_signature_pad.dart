@@ -27,6 +27,8 @@ class FormBuilderSignaturePad extends FormBuilderField<Uint8List> {
   /// Styles the canvas border
   final Border? border;
 
+  final Widget? clearIcon;
+
   /// Creates field with drawing pad on which user can doodle
   FormBuilderSignaturePad({
     Key? key,
@@ -48,6 +50,7 @@ class FormBuilderSignaturePad extends FormBuilderField<Uint8List> {
     this.height = 200,
     this.controller,
     this.border,
+    this.clearIcon,
   }) : super(
           autovalidateMode: autovalidateMode,
           decoration: decoration,
@@ -111,7 +114,8 @@ class FormBuilderSignaturePad extends FormBuilderField<Uint8List> {
                           clearButtonText ?? localizations.cancelButtonLabel,
                           style: TextStyle(color: cancelButtonColor),
                         ),
-                        icon: Icon(Icons.clear, color: cancelButtonColor),
+                        icon: clearIcon ??
+                            Icon(Icons.clear, color: cancelButtonColor),
                       ),
                     ],
                   ),
